@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\MindCar_mobile\\Temp\\gradleOut\\unity-android-resources\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\unity-android-resources\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "111,55",
+                        "endColumns": "48,55",
+                        "endOffsets": "155,106"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,104",
+                        "endColumns": "48,55",
+                        "endOffsets": "99,155"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\MindCar_mobile\\Temp\\gradleOut\\unity-android-resources\\build\\intermediates\\res\\merged\\release\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\unity-android-resources\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "111,55",
+                        "endColumns": "48,55",
+                        "endOffsets": "155,106"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,104",
+                        "endColumns": "48,55",
+                        "endOffsets": "99,155"
+                    }
+                }
+            ]
+        }
+    ]
+}

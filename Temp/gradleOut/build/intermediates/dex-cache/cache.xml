@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\MindCar_mobile\Temp\gradleOut\unity-android-resources\build\intermediates\intermediate-jars\release\classes.jar"
+        jumboMode="false"
+        min-sdk-version="16"
+        optimize="true"
+        revision="29.0.3"
+        sha1="f200a4b1e85ee9c2a536f569b697e328fab304e3">
+        <dex dex="C:\MindCar_mobile\Temp\gradleOut\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+
+</items>

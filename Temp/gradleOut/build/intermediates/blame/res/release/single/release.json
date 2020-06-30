@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_app_icon.png.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\src\\main\\res\\mipmap-mdpi\\app_icon.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi-v4_ic_launcher.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-hdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-mdpi-v4\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\src\\main\\res\\mipmap-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\src\\main\\res\\mipmap-anydpi-v26\\app_icon_round.xml"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\src\\main\\res\\mipmap-anydpi-v26\\app_icon.xml"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-xhdpi-v4\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4_ic_launcher.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-xxhdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi-v4_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-xxxhdpi-v4\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4_ic_launcher.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-mdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi-v4_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-xxhdpi-v4\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi-v4_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-hdpi-v4\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi-v4_ic_launcher.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-xxxhdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\layout_main.xml.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\unity-android-resources\\build\\intermediates\\bundles\\release\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\drawable_icon.png.flat",
+        "source": "C:\\MindCar_mobile\\Temp\\gradleOut\\unity-android-resources\\build\\intermediates\\bundles\\release\\res\\drawable\\icon.png"
+    },
+    {
+        "merged": "C:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4_ic_launcher.png.flat",
+        "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\UnityThinkGear.aar\\92c1ddfd6a656bd58891e8e2a992d9fa\\res\\mipmap-xhdpi-v4\\ic_launcher.png"
+    }
+]

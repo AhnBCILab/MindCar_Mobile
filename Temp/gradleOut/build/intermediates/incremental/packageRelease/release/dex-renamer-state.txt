@@ -1,0 +1,4 @@
+#Tue Jun 30 15:25:49 KST 2020
+base.0=C\:\\MindCar_mobile\\Temp\\gradleOut\\build\\intermediates\\transforms\\dex\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex
