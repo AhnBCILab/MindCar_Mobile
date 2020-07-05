@@ -49,14 +49,10 @@ public class LapTimeManager_auto : MonoBehaviour
         if (SecondCount <= 9)
         {
             SecondBox.GetComponent<Text>().text = "0" + SecondCount + ".";
-            //SecondBox.GetComponent<Text>().text = "" + TempCar.SpeedList.Count + ".";
-            //SecondBox.GetComponent<Text>().text = "" + DC.Algo_Attention + ".";
         }
         else
         {
             SecondBox.GetComponent<Text>().text = "" + SecondCount + ".";
-            //SecondBox.GetComponent<Text>().text = "" + TempCar.SpeedList.Count + ".";
-            //SecondBox.GetComponent<Text>().text = "" + DC.Algo_Attention + ".";
         }
 
         if (SecondCount >= 60)
@@ -68,7 +64,6 @@ public class LapTimeManager_auto : MonoBehaviour
         if (MinuteCount <= 9)
         {
             MinuteBox.GetComponent<Text>().text = "0" + MinuteCount + ":";
-            //MinuteBox.GetComponent<Text>().text = "" + DC.RawList.Count + ":";
         }
         else
         {

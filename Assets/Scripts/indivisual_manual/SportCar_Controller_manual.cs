@@ -1,9 +1,6 @@
 ﻿using System.Collections;
-
 using System.Collections.Generic;
-
 using UnityEngine;
-
 using System;
 
 //Added for file IO & Thread
@@ -38,9 +35,9 @@ public class SportCar_Controller_manual : MonoBehaviour
     //float BeginningCommmand = 1.0f;  //1
     //float FinalCommmand = 10.0f;     //10
 
-        
+
     //---------------------------------- 
-    //---chan's code---//
+    //---New for MindCar Mobile ver.---//
     public GameObject CarControls;
 
     //To handle speed of the race
@@ -67,7 +64,7 @@ public class SportCar_Controller_manual : MonoBehaviour
 
     //scaling factor
     float[] s = new float[6];
-    //---chan's code---//
+    //---New for MindCar Mobile ver.---//
 
     void Awake()
     {
@@ -84,7 +81,7 @@ public class SportCar_Controller_manual : MonoBehaviour
         start_time = 0;
         maintain_value = 0;
 
-        //---chan's code---//
+        //---New for MindCar Mobile ver.---//
         //set path and start time
         sTime = DateTime.Now;
         path = Application.persistentDataPath;
@@ -93,13 +90,6 @@ public class SportCar_Controller_manual : MonoBehaviour
 
         TM.SaveTime();
         TM.SaveEvent(1);
-        //Directory.CreateDirectory(path + "/1st");
-        /*
-        if (!Directory.Exists(path + "/TEST_06_26"))
-        {
-            Directory.CreateDirectory(path + "/TEST_06_26");
-        }
-        */
 
         //set scaling factor
         s[0] = -1.4f;
@@ -113,7 +103,7 @@ public class SportCar_Controller_manual : MonoBehaviour
         Algo_Beta = DC.getAlgo_Beta();
         Algo_Beta_temp = Algo_Beta;
         SpeedSet();
-        //---chan's code---//
+        //---New for MindCar Mobile ver.---//
     }
     // when start() is removed the car dose not start moving.
 
@@ -151,17 +141,9 @@ public class SportCar_Controller_manual : MonoBehaviour
             //Console.WriteLine(prime);
             bw.Write(element);
         }
-        /*
-        for (int i = 0; i < betaPowerList.Count; i++)
-        {
-            bw.WriteLine(betaPowerList[i]);
-        }
-        */
 
         bw.Close();
-        //bw.Write("\n");
         fs.Close();
-
         //TurnOffCar();
     }
 
@@ -182,16 +164,8 @@ public class SportCar_Controller_manual : MonoBehaviour
             //Console.WriteLine(prime);
             bw.Write(element);
         }
-        /*
-        for (int i = 0; i < SpeedList.Count; i++)
-        {
-            bw.WriteLine(SpeedList[i]);
-        }
-        */
-
-
+        
         bw.Close();
-        //bw.Write("\n");
         fs.Close();
     }
 
@@ -213,22 +187,15 @@ public class SportCar_Controller_manual : MonoBehaviour
             //Console.WriteLine(prime);
             bw.Write(element);
         }
-        /*
-        for (int i = 0; i < valueArray.Count; i++)
-        {
-            bw.WriteLine(valueArray[i]);
-        }
-        */
 
         //bw.WriteLine(betaStd);
-        //bw.Write("\n");
         //bw.WriteLine(betaAvr);
 
         bw.Close();
         fs.Close();
     }
 
-    //---chan's code---//
+    //---New for MindCar Mobile ver.---//
     void SpeedSet()
     {
         speed = normal_Speed;
@@ -270,45 +237,12 @@ public class SportCar_Controller_manual : MonoBehaviour
                 case 5: speed = 4.7f; break;
                 case 6: speed = 5.3f; break;
                 default: break;
-
-
-                    /*
-                    case 0: speed = 20f; break;
-                    case 1: speed = 20f; break;
-                    case 2: speed = 20f; break;
-                    case 3: speed = 20f; break;
-                    case 4: speed = 20f; break;
-                    case 5: speed = 20f; break;
-                    case 6: speed = 20f; break;
-                    default: break;
-                    */
-                    /*
-                    case 0: speed = 10f; break;
-                    case 1: speed = 10f; break;
-                    case 2: speed = 10f; break;
-                    case 3: speed = 9f; break;
-                    case 4: speed = 10f; break;
-                    case 5: speed = 11f; break;
-                    case 6: speed = 12f; break;
-                    default: break;
-                    */
-
-
             }
         }
 
         //2. Before 30 sec(train not done)
         else
         {
-            //if ( (Algo_Beta > 0.1) && (Algo_Beta != betaArr[betaArr.Count - 1] )
-            /*
-            if (Algo_Beta > 0.1)
-            {
-                //betaArr.Add(Algo_Beta);
-                betaPowerList.Add(Algo_Beta);
-            }
-            */
-
             //Measure time difference
             eTime = DateTime.Now;
             gapTime = eTime - sTime;
@@ -405,7 +339,7 @@ public class SportCar_Controller_manual : MonoBehaviour
         }
         return result;
     }
-    //---chan's code---//
+    //---New for MindCar Mobile ver.---//
 
     void Update()
     {

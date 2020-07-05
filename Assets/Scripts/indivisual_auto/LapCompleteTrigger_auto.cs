@@ -35,30 +35,18 @@ public class LapCompleteTrigger_auto : MonoBehaviour
         CarDefault.Pause();
         NameText.GetComponent<Text>().enabled = false;
         FinishPanel.SetActive(true);
-
-        // test
-        //CarControls.SetActive(false);
-        //TempCar.StopCar();
-        //GameObject.Find("SportCar").GetComponent<SportCar_Controller_auto>().Finish = true;
-
-
-
+        
         FinalPanelManager_auto.MinuteCount = LapTimeManager_auto.MinuteCount;
         FinalPanelManager_auto.SecondCount = LapTimeManager_auto.SecondCount;
         FinalPanelManager_auto.MilliCount = LapTimeManager_auto.MilliCount;
-
-        //FinishPanel.SetActive(true);
+        
         LapTimer.SetActive(false);
-
         LapTimeManager_auto.MinuteCount = 0;
         LapTimeManager_auto.SecondCount = 0;
         LapTimeManager_auto.MilliCount = 0;
 
         HalfLapTrig.SetActive(true);
         LapCompleteTrig.SetActive(false);
-        //FinishPanel.SetActive(true);
-        //CarControls.SetActive(false);
-
         TempCar.StopCar();
         //Debug.Log("TempCar.Finish:" + TempCar.Finish);
     }

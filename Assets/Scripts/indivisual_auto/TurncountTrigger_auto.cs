@@ -30,8 +30,6 @@ public class TurncountTrigger_auto : MonoBehaviour
         TM.SaveTime();
         TM.SaveEvent(TurnManager_auto.Turncount + 3);
         //Directory.CreateDirectory(path + "/TurnOffTest_" + (TurnManager_auto.Turncount+3));
-
-
         HalfLapTrig.SetActive(true);
 
 

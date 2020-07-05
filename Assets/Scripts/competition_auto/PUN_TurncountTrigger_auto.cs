@@ -13,8 +13,7 @@ public class PUN_TurncountTrigger_auto : MonoBehaviourPun
     public float time_attack;
     public float time_current;
     int buttonIndexNum = 2;   //  n/laps
-
-    //public GameObject TM;
+    
     public PhotonView PV;
     TimeStampManage TM;
     string path = "default";
@@ -27,7 +26,6 @@ public class PUN_TurncountTrigger_auto : MonoBehaviourPun
 
     void OnTriggerEnter(Collider collider)
     {
-        //TM.SaveTime();
         if (PhotonNetwork.IsMasterClient && collider.tag.Equals("Master"))
         {
             GameManager.playerTurncounts[0]++;

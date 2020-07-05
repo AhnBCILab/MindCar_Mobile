@@ -16,32 +16,6 @@ public class PUN_LapTimeManager_auto : MonoBehaviourPun
     public GameObject MinuteBox;
     public GameObject SecondBox;
     public GameObject MilliBox;
-    /*
-     public GameObject LabelBox;
-
-     public void update_laps(int i)
-     {
-         if (i==1)
-         {
-             update_1stlap();
-         }
-         else if(i==2)
-         {
-             update_2ndlap();
-         }
-     }
-     public void update_1stlap()
-     {
-         LabelBox.GetComponent<Text>().text = "Lap Time" + "\n" + "1st Lap:   "
-             + LapTimeManager_auto.MinuteCount + ":" + LapTimeManager_auto.SecondCount + ":" + LapTimeManager_auto.MilliCount.ToString("F0");
-     }
-
-     public void update_2ndlap()
-     {
-         LabelBox.GetComponent<Text>().text = LabelBox.GetComponent<Text>().text + "\n" + "2nd Lap:   "
-             + LapTimeManager_auto.MinuteCount + ":" + LapTimeManager_auto.SecondCount + ":" + LapTimeManager_auto.MilliCount.ToString("F0");
-     }
-     */
 
     void Update()
     {

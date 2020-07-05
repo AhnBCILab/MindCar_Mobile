@@ -3,18 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 //Added for file IO & Thread
 using System.IO;
 using System.Threading;
 
 
 
-
-
-
 public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
 {
-    DataController DC;// = GameObject.Find("DataController").GetComponent<DataController>();
+    DataController DC;
     TimeStampManage TM;
 
     public GameObject camera;
@@ -43,7 +41,7 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
 
 
     //---------------------------------- 
-    //---chan's code---//
+    //---Newly added for MindCar Mobile ver.---//
     public GameObject CarControls;
 
     //To handle speed of the race
@@ -102,8 +100,8 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
         TM = GameObject.Find("TimeStampManage").GetComponent<TimeStampManage>();
         DC = GameObject.Find("DataController").GetComponent<DataController>();
         DC.ResetRaw();
-        
-        //---chan's code---//
+
+        //---Newly added for MindCar Mobile ver.---//
         //set path and start time
         sTime = DateTime.Now;
         path = Application.persistentDataPath;
@@ -112,12 +110,6 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
 
         TM.SaveTime();
         TM.SaveEvent(1);
-        /*
-        if (!Directory.Exists(path + "/TEST_06_26"))
-        {
-            Directory.CreateDirectory(path + "/TEST_06_26");
-        }
-        */
 
         //set scaling factor
         s[0] = -1.4f;
@@ -131,7 +123,7 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
         Algo_Beta = DC.getAlgo_Beta();
         Algo_Beta_temp = Algo_Beta;
         SpeedSet();
-        //---chan's code---//
+        //---Newly added for MindCar Mobile ver.---//
 
     }
     // when start() is removed the car dose not start moving.
@@ -143,18 +135,19 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
         SaveSpeedList();
         SaveBetaPowerList();
         DC.SaveRawData("Multi_Auto");
-        //In Multi Mode, Last lap is recoreded in TurncountTrigger script(On contrary, Last lap was not recorded in TurncounTrigger script of Individual Mode)
+        //*In Multi Mode, Last lap is recoreded in TurncountTrigger script(On contrary, Last lap was not recorded in TurncounTrigger script of Individual Mode)*
         //TM.SaveEvent(6);
         //TM.SaveTime();
         StopCnt++;
         //Directory.CreateDirectory(path + "/TurnOffTest_Multi_" + StopCnt);
         //TurnOffCar();
     }
-
+    /*
     void TurnOffCar()
     {
         //CarControls.SetActive(false);
     }
+    */
 
     void SaveBetaPowerList()
     {
@@ -170,18 +163,10 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
 
         foreach (double element in betaPowerList)
         {
-            //Console.WriteLine(prime);
             bw.Write(element);
         }
-        /*
-        for (int i = 0; i < betaPowerList.Count; i++)
-        {
-            bw.WriteLine(betaPowerList[i]);
-        }
-        */
 
         bw.Close();
-        //bw.Write("\n");
         fs.Close();
 
         //TurnOffCar();
@@ -201,19 +186,10 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
 
         foreach (float element in SpeedList)
         {
-            //Console.WriteLine(prime);
             bw.Write(element);
         }
-        /*
-        for (int i = 0; i < SpeedList.Count; i++)
-        {
-            bw.WriteLine(SpeedList[i]);
-        }
-        */
-
 
         bw.Close();
-        //bw.Write("\n");
         fs.Close();
     }
 
@@ -232,25 +208,17 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
 
         foreach (double element in valueArray)
         {
-            //Console.WriteLine(prime);
             bw.Write(element);
         }
-        /*
-        for (int i = 0; i < valueArray.Count; i++)
-        {
-            bw.WriteLine(valueArray[i]);
-        }
-        */
 
         //bw.Write(betaStd);
-        //bw.Write("\n");
         //bw.Write(betaAvr);
 
         bw.Close();
         fs.Close();
     }
 
-    //---chan's code---//
+    //---Newly added for MindCar Mobile ver.---//
     void SpeedSet()
     {
         speed = normal_Speed;
@@ -292,45 +260,12 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
                 case 5: speed = 4.7f; break;
                 case 6: speed = 5.3f; break;
                 default: break;
-
-
-                    /*
-                    case 0: speed = 20f; break;
-                    case 1: speed = 20f; break;
-                    case 2: speed = 20f; break;
-                    case 3: speed = 20f; break;
-                    case 4: speed = 20f; break;
-                    case 5: speed = 20f; break;
-                    case 6: speed = 20f; break;
-                    default: break;
-                    */
-                    /*
-                    case 0: speed = 10f; break;
-                    case 1: speed = 10f; break;
-                    case 2: speed = 10f; break;
-                    case 3: speed = 9f; break;
-                    case 4: speed = 10f; break;
-                    case 5: speed = 11f; break;
-                    case 6: speed = 12f; break;
-                    default: break;
-                    */
-
-
             }
         }
 
         //2. Before 30 sec(train not done)
         else
         {
-            //if ( (Algo_Beta > 0.1) && (Algo_Beta != betaArr[betaArr.Count - 1] )
-            /*
-            if (Algo_Beta > 0.1)
-            {
-                //betaArr.Add(Algo_Beta);
-                betaPowerList.Add(Algo_Beta);
-            }
-            */
-
             //Measure time difference
             eTime = DateTime.Now;
             gapTime = eTime - sTime;
@@ -339,15 +274,12 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
             //trained-->true when over 30 seconds
             if (gapSec >= 30)
             {
-                //DC.SaveTimeStamp(System.DateTime.Now.ToString("mm:ss.fff"), 2);
                 TM.SaveTime();
                 TM.SaveEvent(3);
 
                 betaAvr = GetAverage(betaPowerList);
                 betaStd = GetStandardDeviation(betaPowerList, betaAvr);
                 trained = true;
-                //ToBinary(betaArr);
-                //Bin.Start();
                 var th = new Thread(() => SaveTrainingBeta(betaPowerList, betaStd, betaAvr));
                 th.Start();
             }
@@ -428,7 +360,7 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
         }
         return result;
     }
-    //---chan's code---//
+    //---Newly added for MindCar Mobile ver.---//
 
 
     double Meas_Angle(Vector3 P1, Vector3 P2, Vector3 P3)
@@ -486,24 +418,21 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
     void Update()
     {
         //if (!photonView.IsMine) return;
-        
+
         if (!photonView.IsMine) return;
         //if (!StartManager.StartBool) return;
-        
+
         if (!StartManager.StartBool)
         {
-            // This case is before CountDown, so stopcar() function is invoked at beginning even though it is not needed..
+            // This case is when before having countdown, so stopcar() function is invoked at beginning even though it is not needed..
             if (BeforeCntDown == 0)
             {
                 StopCar();
                 BeforeCntDown = 1;
             }
-            // This case is when right after done with 3 laps.
+            // This case is invoked right after done with 3 laps.
             if (BeforeCntDown == 1 && AfterCntDown == 1)
             {
-                //sTime = DateTime.Now; //WRONG
-                //TM.SaveTime();
-                //TM.SaveEvent(1);
                 StopCar();
                 //Just make them into meaningless integer
                 BeforeCntDown = -1;
@@ -511,146 +440,123 @@ public class PUN_Sportcar_Controller_auto : MonoBehaviourPun//, IPunObservable
             }
             return;
         }
+
+        //this line will be called constantly after 3 sec of countdown
         AfterCntDown = 1;
-        
-        
 
         Algo_Beta_temp = DC.getAlgo_Beta();
-        /*
-        if (Finish == true)
+        //Set the speed only when Algo_Beta of DC was updated
+        if (Algo_Beta_temp != Algo_Beta)
         {
-            //Do nothing when finished race
+            Algo_Beta = Algo_Beta_temp;
+            if (Algo_Beta < 0) Algo_Beta = 0;
+            betaPowerList.Add(Algo_Beta);
+            SpeedSet();
         }
-        */
-        
-        
-            //if (!photonView.IsMine) return;
-            //if (!StartManager.StartBool) return;
+
+
+        currPosition = transform.position;
+        currRotation = transform.rotation;
+
+        CarDefault.volume = 0.2f + (speed / 6f);
+
+
+        SpeedobarConverter_auto.ShowSpeed(speed, 0, 10);
+        // kh end
+
+
+        if (waypointIndex < waypoints.Length)
+        {
+            // moving forward
+            //transform.position = Vector3.MoveTowards(currPosition, waypoints[waypointIndex], speed);
+            // calculating rotation angle
+
+            Vector3 standard = new Vector3(currPosition.x, currPosition.y, currPosition.z + 20);
             /*
-            if (!StartManager.StartBool)
-            {
-                if (BeforeCntDown == 0)
-                {
-                    StopCar();
-                    BeforeCntDown++;
-                }
-                return;
-            }
+            double angle = Meas_Angle( standard, currPosition, waypoints[waypointIndex]);	
+            if ( waypoints[waypointIndex].x - currPosition.x < 0)
+                angle = 360 - angle;
             */
-            //Algo_Beta_temp = DC.getAlgo_Beta();
 
-            //Set the speed only when Algo_Beta of DC was updated
-            if (Algo_Beta_temp != Algo_Beta)
+            Quaternion Right = Quaternion.identity;
+            //Right.eulerAngles = new Vector3(0, (float)angle, 0);
+            Quaternion Current = Quaternion.identity;
+            /*
+            if (transform.eulerAngles.y != 0f)
             {
-                Algo_Beta = Algo_Beta_temp;
-                if (Algo_Beta < 0) Algo_Beta = 0;
-                betaPowerList.Add(Algo_Beta);
-                SpeedSet();
-            }
-
-
-            currPosition = transform.position;
-            currRotation = transform.rotation;
-
-            CarDefault.volume = 0.2f + (speed / 6f);
-
-
-            SpeedobarConverter_auto.ShowSpeed(speed, 0, 10);
-            // kh end
-
-
-            if (waypointIndex < waypoints.Length)
-            {
-                // moving forward
-                //transform.position = Vector3.MoveTowards(currPosition, waypoints[waypointIndex], speed);
-                // calculating rotation angle
-
-                Vector3 standard = new Vector3(currPosition.x, currPosition.y, currPosition.z + 20);
-                /*
-                double angle = Meas_Angle( standard, currPosition, waypoints[waypointIndex]);	
-                if ( waypoints[waypointIndex].x - currPosition.x < 0)
-                    angle = 360 - angle;
-                */
-
-                Quaternion Right = Quaternion.identity;
-                //Right.eulerAngles = new Vector3(0, (float)angle, 0);
-                Quaternion Current = Quaternion.identity;
-                /*
-                if (transform.eulerAngles.y != 0f)
-                {
-                    angle2 = transform.eulerAngles.y;
-                }*/
                 angle2 = transform.eulerAngles.y;
-                Current.eulerAngles = new Vector3(0, angle2, 0);
+            }*/
+            angle2 = transform.eulerAngles.y;
+            Current.eulerAngles = new Vector3(0, angle2, 0);
 
-                float kh_angle = kh_get_angle(currPosition, standard, waypoints[waypointIndex]);
-                kh_angle = Mathf.Round(kh_angle * Mathf.Pow(10, 4)) * 0.0001f;
+            float kh_angle = kh_get_angle(currPosition, standard, waypoints[waypointIndex]);
+            kh_angle = Mathf.Round(kh_angle * Mathf.Pow(10, 4)) * 0.0001f;
 
-                if (waypoints[waypointIndex].x - currPosition.x < 0)
-                {
-                    kh_angle = 360.0f - kh_angle; // reverse?
-                }
-                angle2 = Mathf.Round(angle2 * Mathf.Pow(10, 4)) * 0.0001f;
-
-                Right.eulerAngles = new Vector3(0, kh_angle, 0);
-
-
-                //transform.rotation = Quaternion.Slerp(Current, Right, Time.deltaTime * 6.0f);
-                transform.Translate(new Vector3(0, 0, speed)); // move forward (only z-axis)
-
-                var dir_right = Quaternion.Euler(0, 55.0f, 0) * transform.forward;
-                var dir_left = Quaternion.Euler(0, -55.0f, 0) * transform.forward;
-                Ray ray = new Ray(this.transform.position, this.transform.forward);
-                /*
-                Ray ray_right = new Ray(this.transform.position, (this.transform.right + this.transform.forward).normalized);
-                Ray ray_left = new Ray(this.transform.position, (this.transform.forward - this.transform.right).normalized);
-                */
-                Ray ray_right = new Ray(this.transform.position, dir_right);
-                Ray ray_left = new Ray(this.transform.position, dir_left);
-                //transform.ri
-                RaycastHit hit_forward; // forward
-                RaycastHit hit_right;
-                RaycastHit hit_left;
-                float diff_distance = 0;
-
-                Physics.Raycast(ray, out hit_forward, 1000);
-                Physics.Raycast(ray_right, out hit_right, 1000);
-                Physics.Raycast(ray_left, out hit_left, 1000);
-                diff_distance = hit_left.distance - hit_right.distance;
-
-                // ------------------ Wheel direction control using Unity Raycast features
-                // Raycast shoots layser to the assigned direction and measrues distance
-                // Raycast information: forward, forward + right, and forward + left
-                // Case:
-                // - when left distance is shorter than right distance
-                //  : turn right
-                // - when right distance is shorter than left distance
-                //  : turn left
-                // now turning step is optimized in case of speed=3 (normalization is done in terms of 3)
-
-                if (diff_distance > 15.0f) // control sensitivity level
-                {
-                    transform.Rotate(new Vector3(0, -1.2f * speed / 3.0f, 0)); // turn left with fine steps
-                }
-                else if (diff_distance < -15.0f) // control sensitivity level
-                {
-                    transform.Rotate(new Vector3(0, 1.2f * speed / 2.0f, 0)); // turn right with fine steps     
-                }
-                /*
-                Debug.Log("forward:"+ hit_forward.distance+" left:" + hit_left.distance + " right:" + hit_right.distance + " diff:" +
-                    diff_distance+ " speed: "+speed);
-                */
-
-
-                if (Vector3.Distance(waypoints[waypointIndex], currPosition) <= 0.01f)
-                {
-                    waypointIndex++;
-                    if (waypointIndex == 21)
-                        waypointIndex = 0;
-                }
-
-                Marker.transform.position = new Vector3(this.transform.position.x, -1290, this.transform.position.z);
+            if (waypoints[waypointIndex].x - currPosition.x < 0)
+            {
+                kh_angle = 360.0f - kh_angle; // reverse?
             }
-        
+            angle2 = Mathf.Round(angle2 * Mathf.Pow(10, 4)) * 0.0001f;
+
+            Right.eulerAngles = new Vector3(0, kh_angle, 0);
+
+
+            //transform.rotation = Quaternion.Slerp(Current, Right, Time.deltaTime * 6.0f);
+            transform.Translate(new Vector3(0, 0, speed)); // move forward (only z-axis)
+
+            var dir_right = Quaternion.Euler(0, 55.0f, 0) * transform.forward;
+            var dir_left = Quaternion.Euler(0, -55.0f, 0) * transform.forward;
+            Ray ray = new Ray(this.transform.position, this.transform.forward);
+            /*
+            Ray ray_right = new Ray(this.transform.position, (this.transform.right + this.transform.forward).normalized);
+            Ray ray_left = new Ray(this.transform.position, (this.transform.forward - this.transform.right).normalized);
+            */
+            Ray ray_right = new Ray(this.transform.position, dir_right);
+            Ray ray_left = new Ray(this.transform.position, dir_left);
+            //transform.ri
+            RaycastHit hit_forward; // forward
+            RaycastHit hit_right;
+            RaycastHit hit_left;
+            float diff_distance = 0;
+
+            Physics.Raycast(ray, out hit_forward, 1000);
+            Physics.Raycast(ray_right, out hit_right, 1000);
+            Physics.Raycast(ray_left, out hit_left, 1000);
+            diff_distance = hit_left.distance - hit_right.distance;
+
+            // ------------------ Wheel direction control using Unity Raycast features
+            // Raycast shoots layser to the assigned direction and measrues distance
+            // Raycast information: forward, forward + right, and forward + left
+            // Case:
+            // - when left distance is shorter than right distance
+            //  : turn right
+            // - when right distance is shorter than left distance
+            //  : turn left
+            // now turning step is optimized in case of speed=3 (normalization is done in terms of 3)
+
+            if (diff_distance > 15.0f) // control sensitivity level
+            {
+                transform.Rotate(new Vector3(0, -1.2f * speed / 3.0f, 0)); // turn left with fine steps
+            }
+            else if (diff_distance < -15.0f) // control sensitivity level
+            {
+                transform.Rotate(new Vector3(0, 1.2f * speed / 2.0f, 0)); // turn right with fine steps     
+            }
+            /*
+            Debug.Log("forward:"+ hit_forward.distance+" left:" + hit_left.distance + " right:" + hit_right.distance + " diff:" +
+                diff_distance+ " speed: "+speed);
+            */
+
+
+            if (Vector3.Distance(waypoints[waypointIndex], currPosition) <= 0.01f)
+            {
+                waypointIndex++;
+                if (waypointIndex == 21)
+                    waypointIndex = 0;
+            }
+
+            Marker.transform.position = new Vector3(this.transform.position.x, -1290, this.transform.position.z);
+        }
+
     }
 }
