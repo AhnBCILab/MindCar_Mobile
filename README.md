@@ -1,9 +1,5 @@
 # MindCar_Mobile
-- MindCar Mobile is an android game application that applies Brain-Computer interface.
-- It is upgrade version of MindCar version 2, which only could be played in PC
-- For more explanation for design of the game, refer to MindCar Version 2
 
-## Screen Shot
 #### Individual Mode
 
 <img width="700" src="https://user-images.githubusercontent.com/47956399/92727844-bb43e400-f3aa-11ea-8535-483dec170ab5.jpg">
@@ -11,6 +7,10 @@
 #### Multi Mode
 
 <img width="700" src="https://user-images.githubusercontent.com/47956399/92727850-bda63e00-f3aa-11ea-92b4-9b51257dc7ed.jpg">
+
+- MindCar Mobile is an android game application that applies Brain-Computer interface.
+- It is upgrade version of MindCar version 2, which only could be played in PC
+- For more explanation for design of the game, refer to MindCar Version 2
 
 ## 1. Requirements
 #### Hardware
